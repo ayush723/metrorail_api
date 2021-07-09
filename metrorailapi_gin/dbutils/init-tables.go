@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 )
-package dbutils
+
 
 func Initialize(dbDriver *sql.DB) {
 	
