@@ -6,6 +6,8 @@ import (
 )
 package dbutils
 
+func Initialize(dbDriver *sql.DB) {
+	
 const train = `
 	CREATE TABLE IF NOT EXISTS train(
 		ID INTEGER PRIAMRY KEY ,
@@ -32,7 +34,6 @@ const schedule = `
 		FOREIGN KEY (STATION_ID) REFERENCES station(ID)
 	)
 `
-func Initialize(dbDriver *sql.DB) {
 	statement, driverError := dbDriver.Prepare(train)
 	if driverError != nil {
 		log.Println(driverError)
